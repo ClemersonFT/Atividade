@@ -8,8 +8,9 @@ class LoggerConsole implements Logger {
 
     @Override
     public void log(Level level, String mensagem) {
-        String color="";
-
+        String color="";      
+        ZoneDateTime dataHoraZona = ZonedDateTime.now();
+    
         switch (level) {
             case ERROR:
                 color = RED;
@@ -23,6 +24,6 @@ class LoggerConsole implements Logger {
             default:
                 color = RESET;
         }
-        System.out.println("Level:"+color+level+RESET+" Mensagem: " + mensagem);
+        System.out.println(color + dataHoraZona.withZoneSameInstant(ZoneId.of("America/Sao_Paulo")) + "Level:"+level+" Mensagem: " + mensagem + RESET);
     }
 }
