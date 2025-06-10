@@ -8,7 +8,7 @@ class LoggerFile implements Logger {
     @Override
     public void log(Level level, String mensagem) {
         String filename = "teste.txt";
-        String texto = "Olá arquivo";
+        String texto = dataHoraZona.withZoneSameInstant(ZoneId.of("America/Sao_Paulo")) + " Level:"+level+" Mensagem: " + mensagem;
         try {
             Files.write(Paths.get(filename)
                     , mensagem.getBytes(),
