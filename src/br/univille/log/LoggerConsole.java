@@ -1,4 +1,5 @@
 package br.univille.log;
+import java.time.ZonedDateTime;
 
 class LoggerConsole implements Logger {
     private static final String RESET = "\u001B[0m";
