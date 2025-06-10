@@ -3,11 +3,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.time.ZonedDataTime;
+import java.time.ZonedDateTime;
 
 class LoggerFile implements Logger {
     @Override
     public void log(Level level, String mensagem) {
+        ZonedDateTime datahoraZona = ZonedDateTime.now()
         String filename = "teste.txt";
         String texto = dataHoraZona.withZoneSameInstant(ZoneId.of("America/Sao_Paulo")) + " Level:"+level+" Mensagem: " + mensagem;
         try {
